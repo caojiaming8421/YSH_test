@@ -12,6 +12,7 @@ from ysh_system.menu.customer.crm_management.CustomerList import CustomerList
 from ysh_system.menu.customer.crm_management.CustomerOpportunity import CustomerOpportunity
 from ysh_system.menu.customer.crm_management.Customer_Public_Pool import Customer_Public_Pool
 from ysh_system.menu.customer.crm_management.Customer import Customer
+from ysh_system.menu.customer.sales_management.Sales_managment import Sales_managment
 
 
 def resource_path(relative_path):
@@ -72,7 +73,10 @@ class ysh_main():
             logs.process_after_loading("登录成功")
             time.sleep(0.5)
             customer =Customer(app.driver) #客资管理
-            customer.main_class2()
+            name=customer.Customer_main_class()
+
+            sales_managment = Sales_managment(app.driver)
+            sales_managment.sales_main_class(name)
 
         except Exception as e:
             logs = time_test.time_test(app.driver)

@@ -1,11 +1,7 @@
 import time
 
 from ysh_system import time_test
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 
-from ysh_system.login_page.Login_page import Login_page
 from ysh_system.menu.customer.crm_management.CustomerList import CustomerList
 from ysh_system.menu.customer.crm_management.CustomerOpportunity import CustomerOpportunity
 from ysh_system.menu.customer.crm_management.Customer_Public_Pool import Customer_Public_Pool
@@ -59,13 +55,14 @@ class Customer():
         time.sleep(0.5)
         logs.process_after_loading("成功添加客户线索信息")
 
-    def main_class2(self):
+    def Customer_main_class(self):
         try:
             app = Customer(self.driver)
             name=app.customerList()  #客户列表  获取最后一位客户的姓名
             app.customeropportunity(str(name)) #客户商机
             name=app.customer_public_pool() #客户公海  获取最后一位客户的姓名
             app.customerLead(name) #客户线索
+            return name
 
         except Exception as e:
             logs = time_test.time_test(app.driver)
