@@ -24,7 +24,6 @@ class Sales_managment():
         try:
             app = Sales_managment(self.driver)
             app.customer_follow(name)  #客户跟单
-
         except Exception as e:
             logs = time_test.time_test(app.driver)
             logs.process_after_loading(f"异常日志:{e}")

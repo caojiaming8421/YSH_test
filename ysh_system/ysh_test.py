@@ -75,9 +75,8 @@ class ysh_main():
             customer =Customer(app.driver) #客资管理
             name=customer.Customer_main_class()
 
-            sales_managment = Sales_managment(app.driver)
+            sales_managment = Sales_managment(app.driver) #销售管理
             sales_managment.sales_main_class(name)
-
         except Exception as e:
             logs = time_test.time_test(app.driver)
             logs.process_after_loading(f"异常日志:{e}")
