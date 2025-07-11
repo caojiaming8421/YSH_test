@@ -28,12 +28,23 @@ def build_executable():
         '--paths=./ysh_system/menu',
         '--paths=./ysh_system/menu/customer',
         '--paths=./ysh_system/menu/customer/crm_management',
+        '--paths=./ysh_system/menu/customer/sales_management',
+        '--paths=./ysh_system/menu/customer',
+        '--paths=./ysh_system/menu/Service_Module/Work_Order_Center',
         '--hidden-import=time_test',  # 简化导入
         '--hidden-import=login_page',
         '--hidden-import=crm_management',
         '--hidden-import=CustomerList',
+        '--hidden-import=Customer',
+        '--hidden-import=CustomerLead',
         '--hidden-import=CustomerOpportunity',
         '--hidden-import=Customer_Public_Pool',
+        '--hidden-import=sales_management',
+        '--hidden-import=Customer_Follow_Up',
+        '--hidden-import=Sales_managment',
+        '--hidden-import=Work_Order_Center',
+        '--hidden-import=WorkOrder',
+        '--hidden-import=WorkOrderManager',
         '--clean',  # 清理临时文件
         '--noconfirm',  # 覆盖输出目录而不确认
         '--log-level=WARN'  # 减少日志输出

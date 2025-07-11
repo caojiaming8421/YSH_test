@@ -23,7 +23,6 @@ class Customer_Follow_Up():
     def add_follow(self, a ,name):
 
         for i in range(a):
-
             self.driver.find_element(By.XPATH,"/html/body/div[1]/div/div[1]/div/div/div/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div/button[1]").click()
             time.sleep(0.5)
             self.driver.find_element(By.XPATH,"//*[text()='标题 ']/../div/div/div/div/div/input").send_keys(f"客户跟单{time.strftime('%Y%m%d_%H%M%S')}")

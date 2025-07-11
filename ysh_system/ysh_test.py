@@ -8,6 +8,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
 from ysh_system.login_page.Login_page import Login_page
+from ysh_system.menu.Service_Module.Work_Order_Center.WorkOrder import Work_Order
 from ysh_system.menu.customer.crm_management.CustomerList import CustomerList
 from ysh_system.menu.customer.crm_management.CustomerOpportunity import CustomerOpportunity
 from ysh_system.menu.customer.crm_management.Customer_Public_Pool import Customer_Public_Pool
@@ -72,11 +73,14 @@ class ysh_main():
             logs = time_test.time_test(app.driver)
             logs.process_after_loading("登录成功")
             time.sleep(0.5)
-            customer =Customer(app.driver) #客资管理
-            name=customer.Customer_main_class()
+            # customer =Customer(app.driver) #客资管理
+            # name=customer.Customer_main_class()
+            #
+            # sales_managment = Sales_managment(app.driver) #销售管理
+            # sales_managment.sales_main_class(name)
 
-            sales_managment = Sales_managment(app.driver) #销售管理
-            sales_managment.sales_main_class(name)
+            workorder =  Work_Order(app.driver) #工单管理
+            workorder.workOrdermanager()
         except Exception as e:
             logs = time_test.time_test(app.driver)
             logs.process_after_loading(f"异常日志:{e}")
